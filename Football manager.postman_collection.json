@@ -1,0 +1,277 @@
+{
+	"info": {
+		"_postman_id": "becb1345-27f4-442b-b091-35beaebe60bb",
+		"name": "Football manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20152102"
+	},
+	"item": [
+		{
+			"name": "find all footballers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/footballers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"footballers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create footballer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Yarmolenko\",\n    \"age\":30,\n    \"experience\":240\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/footballers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"footballers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpDate footballer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Neymar\",\n    \"age\":33,\n    \"expirience\":12.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/footballers/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"footballers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by id Footballer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/footballers/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"footballers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete footballer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/footballers/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"footballers",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create team",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Karpaty\",\n    \"commission\":8,\n    \"balance\":100000000\n    \n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/teams",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "faind all team",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/teams",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add player for team",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/teams/addPlayer/3/9",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						"addPlayer",
+						"3",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find one team",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/teams/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove player with team",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/teams/removePlayer/2/14",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						"removePlayer",
+						"2",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transfer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/teams/transfer/1/1/11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						"transfer",
+						"1",
+						"1",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update team",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Milan\",\n    \"commission\":5,\n    \"balance\":5000000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/teams/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
