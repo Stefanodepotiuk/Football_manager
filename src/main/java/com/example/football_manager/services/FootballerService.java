@@ -8,47 +8,34 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static java.util.stream.Collectors.*;
+import static java.util.stream.Collectors.toList;
 
 @Service
 @AllArgsConstructor
 public class FootballerService {
     private FootballerDAO footballerDAO;
-
-    public List<FootballerDTO> getALL() {
+    public List<FootballerDTO> getAll() {
         List<Footballer> all = footballerDAO.findAll();
         return all.stream().map(FootballerDTO::new).collect(toList());
     }
-
     public FootballerDTO getById(int id) {
-        Footballer footballer = footballerDAO.findById(id).orElse(new Footballer());
+        Footballer footballer = footballerDAO.findById(id)
+                .orElseThrow(() -> new NullPointerException("This footballer isn't exist"));
         return new FootballerDTO(footballer);
     }
-
-    public FootballerDTO createFootballer(Footballer footballer) {
-        return new FootballerDTO(footballerDAO.save(footballer));
+    public Footballer create(Footballer footballer) {
+        return new Footballer(footballerDAO.save(footballer));
     }
-
-    public FootballerDTO UpFootballer(int id, Footballer footballer) {
+    public Footballer update(int id, Footballer footballer) {
         footballer.setId(id);
-        return new FootballerDTO(footballerDAO.save(footballer));
+        return new Footballer(footballerDAO.save(footballer));
     }
-
-    public List<FootballerDTO> deleteFootballer(int id) {
+    public List<FootballerDTO> delete(int id) {
         footballerDAO.deleteById(id);
         List<Footballer> all = footballerDAO.findAll();
         return all.stream().map(FootballerDTO::new).collect(toList());
     }
-
-    public Footballer findOneFootballer(int id) {
+    public Footballer findOneFootballer(int id) throws NullPointerException {
         return footballerDAO.findFootballerById(id);
-    }
-
-    public double priseTransfer(int idPlayer) {
-        int x = 100000;
-        Footballer footballer = footballerDAO.findById(idPlayer).orElse(new Footballer());
-        double experience = footballer.getExperience();
-        int age = footballer.getAge();
-        return x * experience / age;
     }
 }

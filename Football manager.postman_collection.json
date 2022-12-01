@@ -31,7 +31,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\":\"Yarmolenko\",\n    \"age\":30,\n    \"experience\":240\n}",
+					"raw": "{\n    \"name\":\"Rodrigo\",\n    \"dateOfBirth\":\"2000-05-15\",\n    \"careerStartDate\":\"2020-08-20\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -229,17 +229,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/teams/transfer/1/1/11",
+					"raw": "localhost:8080/transfers/4/10/19",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"teams",
-						"transfer",
-						"1",
-						"1",
-						"11"
+						"transfers",
+						"4",
+						"10",
+						"19"
 					]
 				}
 			},
